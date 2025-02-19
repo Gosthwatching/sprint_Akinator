@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
+    <title>Sprint</title>
+</head>
+
+<body>
+    
+    <header>
+        <a href="index.php">Accueil</a>
+        <nav>
+            <a href="signin.php">Connexion</a>
+            <a href="register.php">Inscription</a>
+        </nav>
+    </header>
+    
+    <main>
+        <h1><?php echo $currentQuestion['question']; ?></h1>
+            <form method="post">
+                <button type="submit" name="answer" value="1">vrai</button>
+                <button type="submit" name="answer" value="0">faux</button>
+            </form>
+        <?php include "$template.phtml" ?>
+        
+    </main>
+    <footer>
+        <p>© Copyright 3WA</p>
+    </footer>
+</body>
+
+</html>

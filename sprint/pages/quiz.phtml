@@ -1,0 +1,10 @@
+<h1>Quiz</h1>
+<div>
+<p><?= htmlspecialchars($question['question_text']); ?></p>
+    <form method="post">
+        <input type="hidden" name="question_id" value = "<?= $question['id']; ?>">
+        <button type="submit" name="answer" value = "1" >Oui</button>
+        <button type="submit" name="answer" value = "0" >Non</button>
+    </form>
+<a href="index.phtml">Recommencer le quiz</a>
+</div>
