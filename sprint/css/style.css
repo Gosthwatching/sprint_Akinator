@@ -85,5 +85,14 @@ input {
     border-radius: 5px;
 }
 
+.button-container{
+    padding: 35px;
+}
 
+div{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
 

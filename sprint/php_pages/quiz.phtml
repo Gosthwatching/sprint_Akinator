@@ -1,0 +1,11 @@
+<h1>Quiz</h1>
+<div>
+<p><?= htmlspecialchars($questions["question_text"]) ?></p> 
+<!--La fonction htmlspecialchars() en PHP est utilisée pour convertir les caractères spéciaux en entités HTML afin de prévenir les attaques XSS (Cross-Site Scripting) et d'afficher correctement du texte contenant des caractères spéciaux en HTML.-->
+
+<form method="POST">
+        <button type="radio" name="answer" value="<?= $possibleanswers[0]["id"] ?>">Oui</button>
+        <button type="radio" name="answer" value="<?= $possibleanswers[1]["id"] ?>">Non</button>
+</form>
+<button onclick="window.location.href = window.location.pathname">Recommencer le quiz</button> <!--permet de rester sur la meme page tout en rechargeant la page-->
+</div>

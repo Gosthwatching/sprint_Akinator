@@ -1,0 +1,14 @@
+<h1>Résultat</h1>
+<div>
+<?php if (!empty($result)) : ?>
+    <p>Je parie que tu pensais à <?= htmlspecialchars($result["name"]) ?></p>
+    <img src="<?= htmlspecialchars($result["url"]) ?>" alt="<?= htmlspecialchars($result["name"]) ?>"/>
+    <p><?= htmlspecialchars($result["description"]) ?></p>
+<?php else : ?>
+    <p>Désolé, je n'ai trouvé aucun personnage correspondant.</p>
+<?php endif; ?>
+
+<a href="quiz.php">
+    <button>Revenir au quiz</button>
+</a>
+</div>

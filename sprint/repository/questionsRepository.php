@@ -1,21 +1,18 @@
 <?php
-
-function getFirstQuestions($order_question){
-    
+function getFirstQuestions(int $order_question): ?array {
     $pdo = getConnexion();
     
-    $query = $pdo -> prepare("SELECT * FROM questions WHERE order_question = ?");
+    $query = $pdo->prepare("SELECT * FROM questions WHERE order_question = ?");
     
     $query->execute([$order_question]);
     
     return $query->fetch();
 }
 
-function getQuestionsById($id_questions){
-    
+function getQuestionsById(int $id_questions): ?array {
     $pdo = getConnexion();
     
-    $query = $pdo -> prepare("SELECT * FROM questions WHERE id = ?");
+    $query = $pdo->prepare("SELECT * FROM questions WHERE id = ?");
     
     $query->execute([$id_questions]);
     

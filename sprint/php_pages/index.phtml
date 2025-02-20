@@ -1,0 +1,10 @@
+<h1>Akinator</h1>
+<img src="../img/akinator.png" alt="akinator" class="img"></img>
+<div class="button-container">
+    <button type="submit">
+        <?php if (isset($_SESSION['users'])): ?>
+            <a href="quiz.php" class="button">Commencer le jeu</a>
+        <?php else: ?>
+            <a href="signin.php" class="button">Connectez-vous</a>
+        <?php endif; ?>
+</button>
