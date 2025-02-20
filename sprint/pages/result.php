@@ -11,13 +11,10 @@ if (!isset($_SESSION['users'])) {
     header("Location: index.php");
     exit;
 }
-// $answer = getAnswerByResult("IS NOT NULL");
+
 $id =  $_SESSION["id_characters"];
 $result = getResultById($id);
 
-// if($answer === $result){
-//     echo $result["name"];
-// }
 
 $template = "result";
 include "layout.phtml";

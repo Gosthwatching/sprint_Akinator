@@ -14,8 +14,9 @@ if(!empty($_POST)){
     var_dump($choix);
     $answer = getAnswerById($choix);
     if(isset($answer["id_characters"])){
+        var_dump($answer["id_characters"]);
         $_SESSION["id_characters"] = $answer["id_characters"];
-       header ("Location: result.php");
+      header ("Location: result.php");
     }
     else{
         $id_questions = $answer["id_next_question"];
