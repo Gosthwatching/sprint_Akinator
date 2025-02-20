@@ -89,10 +89,3 @@ input {
     padding: 35px;
 }
 
-div{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-}
-

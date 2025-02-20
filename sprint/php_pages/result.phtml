@@ -1,5 +1,5 @@
 <h1>Résultat</h1>
-<div>
+
 <?php if (!empty($result)) : ?>
     <p>Je parie que tu pensais à <?= htmlspecialchars($result["name"]) ?></p>
     <img src="<?= htmlspecialchars($result["url"]) ?>" alt="<?= htmlspecialchars($result["name"]) ?>"/>
@@ -11,4 +11,3 @@
 <a href="quiz.php">
     <button>Revenir au quiz</button>
 </a>
-</div>
