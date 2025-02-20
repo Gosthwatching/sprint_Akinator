@@ -5,13 +5,13 @@ function getResultById(int $id): ?array {
     
     $query = $pdo->prepare("SELECT
     characters.id,
-    `pictures_id`,
-    `name`,
-    description, 
-    alt,
-    url
+    characters.pictures_id,
+    characters.name,
+    characters.description, 
+    pictures.alt,
+    pictures.url
     FROM
-    `characters`
+    characters
     INNER JOIN pictures
     ON characters.pictures_id = pictures.id 
     WHERE 
@@ -19,5 +19,7 @@ function getResultById(int $id): ?array {
     
     $query->execute([$id]);
     
-    return $query->fetch();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    
+    return $result ?: null;
 }
