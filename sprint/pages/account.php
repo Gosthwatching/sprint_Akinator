@@ -1,16 +1,20 @@
 <?php
 include "../config/database.php";
 include "../repository/userRepository.php";
-include "../repository/gamelogRepository.php";
+include "../repository/gameRepository.php";
 
-session_start();
+session_start(); 
 
 if (!isset($_SESSION['user'])) {
+    $_SESSION['user'] = null; // Définit une valeur par défaut
+}
+
+if (!isset($_SESSION['users'])) {
     header("Location: index.php");
     exit;
 }
 
-$username = $_SESSION['user'];
+$username = $_SESSION['users'];
 $user = getUserByUsername($username);
 
 if (!$user) {
@@ -48,6 +52,9 @@ if (!empty($_POST) && isset($_POST['thenpassword'], $_POST['newpassword'])) {
                 die("Erreur : Échec de la modification du mot de passe.");
                }
 }
+
+
+
 
 
 $template = "account";

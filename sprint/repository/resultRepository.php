@@ -1,12 +1,12 @@
 <?php
 
-function getResult(){
+function getResultById($id){
     
     $pdo = getConnexion();
     
-    $query = $pdo -> prepare("SELECT * FROM result");
+    $query = $pdo -> prepare("SELECT * FROM characters WHERE id = ?");
     
-    $query->execute();
+    $query->execute([$id]);
     
     return $query->fetch();
 }

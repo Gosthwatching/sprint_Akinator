@@ -12,7 +12,7 @@ if(!empty($_POST)){
         if(password_verify($_POST['password'], $user["password"])){
             
             //création d'une session
-            $_SESSION["user"] = $user["username"];
+            $_SESSION["users"] = $user["username"];
             
             //redirection vers la page top secrète
             header("Location: account.php");

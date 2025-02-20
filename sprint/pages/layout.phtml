@@ -13,19 +13,23 @@
 <body>
     
     <header>
-        <a href="index.php">Accueil</a>
         <nav>
-            <a href="signin.php">Connexion</a>
-            <a href="register.php">Inscription</a>
+            <ul>
+                <li>
+                    <a href="index.php">Accueil</a>
+                </li>
+                <li>
+                    <a href="signin.php">Connexion</a>
+                </li>
+                <li>
+                    <a href="register.php">Inscription</a>
+                </li>
+            </ul>
         </nav>
     </header>
     
     <main>
-        <h1><?php echo $currentQuestion['question']; ?></h1>
-            <form method="post">
-                <button type="submit" name="answer" value="1">vrai</button>
-                <button type="submit" name="answer" value="0">faux</button>
-            </form>
+        
         <?php include "$template.phtml" ?>
         
     </main>

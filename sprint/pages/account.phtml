@@ -1,8 +1,9 @@
 <h2><?= htmlspecialchars($_SESSION['user']) ?? "Utilisateur inconnu" ?></h2>
 
 <div>
-    <h3>Historique des parties</h3>
-    <h3>Changer mon mot de passe</h3>
+    <h2>Historique des parties</h2>
+    
+    <h2>Changer mon mot de passe</h2>
     <p>Votre mot de passe doit contenir 8 et 16 caractères, avec une majuscule et minuscule, 1 chiffre et 1 caractère spécial.</p>
     <form method="POST">
         <label for="thenpassword">Mot de passe actuel</label>
@@ -11,8 +12,8 @@
         <input type="password" id="newpassword" name="newpassword"/>
         <button>Changer de mot de passe</button>
     </form>
-    <h3>Supprimer mon compte</h2>
-        <form method="POST" action="destroy.php">
+    <h2>Supprimer mon compte</h2>
+    <form method="POST" action="destroy.php">
             <button type="submit" name="delete_account" class="delete">Supprimer le compte</button>
-        </form>
+    </form>
 </div>

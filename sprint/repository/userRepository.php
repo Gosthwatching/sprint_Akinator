@@ -1,41 +1,39 @@
 <?php
 
-function createUser(string $email, string $username, string $password){
-    
+function createUser(string $email, string $username, string $password) {
     $pdo = getConnexion();
     
-    $query = $pdo -> prepare("INSERT INTO user (email, username, password) VALUES (?,?,?)");
+    // Hacher le mot de passe
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
+    $query = $pdo->prepare("INSERT INTO users (email, username, password) VALUES (?,?,?)"); // Création d'un compte utilisateur
     $query->execute([$email, $username, $password]);
 }
 
-function getUserByUsername(string $username){
-    
+function getUserByUsername(string $username) {
     $pdo = getConnexion();
     
-    $query = $pdo -> prepare("SELECT * FROM user WHERE username = ?");
-    
+    $query = $pdo->prepare("SELECT * FROM users WHERE username = ?"); // Connexion au bon utilisateur par son nickname
     $query->execute([$username]);
     
     return $query->fetch();
 }
 
-function getPasswordByUserId($userId){
-    
+function getPasswordByUserId($userId) {
     $pdo = getConnexion();
     
-    $query = $pdo -> prepare("SELECT password FROM user WHERE id = ?");
-    
+    $query = $pdo->prepare("SELECT password FROM users WHERE id = ?"); // Mot de passe de base
     $query->execute([$userId]);
     
     return $query->fetch();
 }
 
-function updatePassword($userId, $passwordHash){
-    
+function updatePassword($userId, $password) {   // Modification du mot de passe
     $pdo = getConnexion();
     
-    $query = $pdo->prepare("UPDATE user SET password = ? WHERE id = ?");
+    // Hacher le nouveau mot de passe
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
-    return $query->execute([$passwordHash, $userId]);
+    $query = $pdo->prepare("UPDATE users SET password = ? WHERE id = ?");
+    return $query->execute([$hashedPassword, $userId]);
 }

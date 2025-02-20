@@ -14,7 +14,7 @@ if(!empty($_POST)){
 
             createUser($_POST["email"], $_POST["username"], $passwordHash);
             
-            $_SESSION["user"] = $_POST["username"];
+            $_SESSION["users"] = $_POST["username"];
             
             //redirection vers la page top secrète
             header("Location: account.php");

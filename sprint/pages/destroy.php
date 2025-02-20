@@ -18,7 +18,7 @@ if (isset($_POST["delete_account"])) {
     $user = getUserByUsername($_SESSION["user"]);
     
     if ($user) {
-    deleteGameByUserId($user["id"]); 
+    deleteGamelogByUserId($user["id"]); 
     deleteUser($user["id"]); 
     
     session_destroy();
